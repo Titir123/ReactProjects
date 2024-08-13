@@ -79,7 +79,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do <br /> eiusmod.
      <Card variant='outlined' sx={{ display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column", height:500}}>
       <Image
      component="img"
-       style width={"60%"} height= {230}
+       style width={300} height= {230}
       src ={image[index]}
       alt="green iguana"/>
     <CardContent sx={{display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
