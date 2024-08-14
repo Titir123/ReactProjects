@@ -14,13 +14,13 @@ const Footer = () => {
                         <Typography variant="h6" color="white" gutterBottom>
                             Site Links
                         </Typography>
-                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                        <Link href="/cms/home" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
                             Home
                         </Link>
-                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                        <Link href="/cms/productlist" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
                             Products
                         </Link>
-                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                        <Link href="/cms/createdata" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
                             Add products
                         </Link>
                     </Grid>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { TextField, Button, Container, Paper, Grid, Typography, AppBar, Box, Toolbar, IconButton } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useSignUpMutation } from '@/hooks/customHooks/authQuery.hooks';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import Link from 'next/link';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 
@@ -30,9 +30,9 @@ export default function index() {
     <>
     <AppBar position="static"  sx={{backgroundColor:"orangered"}}>
       <Toolbar>
-      <IconButton sx={{ padding: 0, fontSize: { xs: 'inherit', md: 'inherit' }, display: { md: 'flex' } }}>
-        <ShoppingCartIcon/> 
-        </IconButton> 
+      <img style={{display:{md:'flex'}, width:"30px", height:"30px"}}
+       src="/Images/7191783.png"
+       ></img>
 
         {/* Center Title */}
         <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -152,7 +152,15 @@ export default function index() {
                         <Typography variant="h6" color="white" gutterBottom>
                             Site Links
                         </Typography>
-          
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Home
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Productlist
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Createdata
+                        </Link>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" color="white" gutterBottom>

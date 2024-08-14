@@ -1,21 +1,16 @@
 import { AppBar, Box, Button, Container, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import Link from "next/link";
-
-
-
-
 
 export default function Home() {
   return (
     <>
     <AppBar position="static" sx={{backgroundColor:"orangered"}}>
       <Toolbar>
-        {/* Left Image */}
-        <IconButton sx={{ padding: 0, fontSize: { xs: 'inherit', md: 'inherit' }, display: { md: 'flex' } }}>
-        <ShoppingCartIcon/> 
-        </IconButton>
+       <img style={{display:{md:'flex'}, width:"30px", height:"30px"}}
+       src="/Images/7191783.png"
+       ></img>
 
         {/* Center Title */}
         <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -63,14 +58,22 @@ export default function Home() {
 
     <footer>
             
-            <Box sx={{ bgcolor: 'slategrey', color:"whitesmoke", p: 6}} component="footer">
+            <Box sx={{ bgcolor: 'slategray', color:"whitesmoke", p: 6}} component="footer">
             <Container maxWidth="lg">
                 <Grid container spacing={4} justifyContent="space-between">
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" color="white" gutterBottom>
                             Site Links
                         </Typography>
-          
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Home
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Productlist
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Createdata
+                        </Link>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" color="white" gutterBottom>
