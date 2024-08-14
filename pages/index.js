@@ -1,109 +1,113 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import {Carousel} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, CardActions, CardContent, CardMedia, Container, Grid, Typography } from "@mui/material";
-import { Card } from "@mui/material";
-import { Box } from "@mui/material";
+import { AppBar, Box, Button, Container, Grid, IconButton, Toolbar, Typography } from "@mui/material";
+import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Link from "next/link";
 
-import img1 from '../public/Images/istockphoto-1251629816-170667a.webp';
-import img2 from '../public/Images/240_F_365528663_miV08QzGGVLqhRRQVQ4B9C9PtoTRJiSv.jpg';
-import img3 from '../public/Images/240_F_785356101_zxsJTOB9L2CATVzKntId5IdvdfTNYvZZ.jpg';
 
 
-const inter = Inter({ subsets: ["latin"] });
-const prod =["Electronics", "Beauty", "Home Appliances"];
-const image = [img1, img2, img3];
+
 
 export default function Home() {
-    return (
-        <>
-        <div>
-             <Carousel indicators={false} fade={true} interval={2000}>
-      <Carousel.Item>
-      <img
-          className="d-block w-100 carousel-image"
-          src="Images/banner-shells-blue-wood-background-light-format-60791177.webp" 
-          alt="First slide"
+  return (
+    <>
+    <AppBar position="static" sx={{backgroundColor:"orangered"}}>
+      <Toolbar>
+        {/* Left Image */}
+        <IconButton sx={{ padding: 0, fontSize: { xs: 'inherit', md: 'inherit' }, display: { md: 'flex' } }}>
+        <ShoppingCartIcon/> 
+        </IconButton>
+
+        {/* Center Title */}
+        <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
+          <Typography variant="h6" component="div" sx={{fontFamily:"fantasy", color:"white"}}>
+            Clickshop
+          </Typography>
           
-        />
-        <Carousel.Caption>
-          <h2 className="heading">Best solution to all your needs</h2>
-          <p className="para">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img
-          className="d-block w-100 carousel-image"
-          src= "Images/blue-red-object-with-red-blue-design-is-shown_337384-104744.jpg" 
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h2 className="heading">Exclusive products</h2>
-          <p className="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-      <img
-          className="d-block w-100 carousel-image"
-          src="Images/240_F_365528663_miV08QzGGVLqhRRQVQ4B9C9PtoTRJiSv.jpg" 
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h2 className="heading">Affordable with high quality</h2>
-          <p className="para">
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-              
-           
-        </div>
-        <Container maxWidth="lg">
+        </Box>
 
-<Typography sx={{display:"flex",alignItems:"center", justifyContent:"center", variant:"h2", fontSize:"40px", marginTop:"100px", color:"Red", fontFamily:"cursive"}}>
-  Our Products
-</Typography>
-<Typography sx={{display:"flex",alignItems:"center", justifyContent:"center", variant:"p", fontSize:"20px", marginTop:"20px", color:"GrayText"}}>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do <br /> eiusmod.
-</Typography>
-<>
-<Box sx={{height:"100px"}}>
+        {/* Right Button */}
+        
+        <Link href="/auth/register"><Button variant="outlined" sx={{backgroundColor:"darkblue", color:"white"}}>Signup</Button></Link>
+      </Toolbar>
+    </AppBar>
+    <Box
+      sx={{
+        width: '100%',
+        height: '100vh',
+        backgroundImage: `url(/Images/istockphoto-1251629816-170667a.webp)`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        color: '#fff', // Adjust text color as needed
+      }}
+    >
+      <Typography variant="h2" component="h1" sx={{fontFamily:"fantasy", color:"skyblue"}}>
+        Welcome to Clickshop
+      </Typography>
+      <Typography variant="h6" component="div" sx={{fontFamily:"fantasy", color:"darkblue"}}>
+            Best solution to all your daily needs
+          </Typography>
+      <Link href="/auth/login"><Button 
+        variant="contained" 
+        color="primary" 
+        sx={{ mt: 3 }}
+      >
+        Get Started
+      </Button></Link>
+    </Box>
 
-</Box>
-<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 6, md: 12 }}>
-{Array.from(Array(3)).map((_, index) => (
-  <Grid item xs={12} sm={12} md={4} key={index}>
-     <Card variant='outlined' sx={{ display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column", height:500}}>
-      <Image
-     component="img"
-       style width={300} height= {230}
-      src ={image[index]}
-      alt="green iguana"/>
-    <CardContent sx={{display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
-      <Typography gutterBottom variant="h5" component="div">
-        {prod[index]}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-       Lorem Ipsum dolor sit amet Lo Lorem Ipsum dolor sit amet  Lorem Ipsum dolor sit amet rem Ipsum dolor sit amet 
-      </Typography>
-    </CardContent>
-    <CardActions>
-    <Button sx={{
-borderColor:"red",
-borderRadius:"20px"}} variant="outlined">
-  <Link style={{color:"Red", textDecoration:"none"}} href='cms/productlist'>Read More</Link>
-</Button>
-    </CardActions>
-    </Card>
-  </Grid>
-))}
-</Grid>
-</>
-</Container>
-<br /> <br /> <br />
-       </> 
-    );
+    <footer>
+            
+            <Box sx={{ bgcolor: 'slategrey', color:"whitesmoke", p: 6}} component="footer">
+            <Container maxWidth="lg">
+                <Grid container spacing={4} justifyContent="space-between">
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Site Links
+                        </Typography>
+          
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Quick Links
+                        </Typography>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Contact Us
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Privacy Policy
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Terms and Conditions
+                        </Link>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Follow Us
+                        </Typography>
+                        <IconButton href="#" color="inherit">
+                            <Facebook />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <Twitter />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <Instagram />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <LinkedIn />
+                        </IconButton>
+                    </Grid>
+                </Grid>
+               
+            </Container>
+        </Box>
+        </footer>
+    </>
+  );
 }

@@ -32,7 +32,7 @@ export const useSignInMutation = () => {
         cookies.set("profile_pic", profile_pic, { path: "/" });
 
         toast.success(message);
-        router.push("/");
+        router.push("/cms/home");
       } else {
         toast.error(message);
       }

@@ -3,9 +3,10 @@
   display: none;
 }
 
-.carousel-image {
+.carousel_image {
   height: 400px; 
   object-fit: cover; 
+  width:100%;
 }
 .heading{
   color: rgb(2, 44, 60);

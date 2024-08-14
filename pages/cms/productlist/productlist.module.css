@@ -1,0 +1,22 @@
+.MuiTableContainer_root {
+    overflow-x: hidden; 
+  }
+  
+  @media (max-width: 700px) {
+    .MuiTableCell_root {
+      padding: 6px 8px; 
+    }
+  
+    .MuiTableCell_root img {
+      width: 20px;
+    }
+  
+    .MuiButton_root {
+      font-size: 0.50rem;
+    }
+  
+    .MuiTable_root {
+       display: block; 
+      overflow-x: hidden; 
+    }
+  }

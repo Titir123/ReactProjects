@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
-import { TextField, Button, Container, Paper, Grid, Typography } from '@mui/material';
+import { TextField, Button, Container, Paper, Grid, Typography, AppBar, Box, Toolbar, IconButton } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { useSignUpMutation } from '@/hooks/customHooks/authQuery.hooks';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Link from 'next/link';
+import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+
+
 
 export default function index() {
   const {
@@ -23,6 +28,26 @@ export default function index() {
   };
   return (
     <>
+    <AppBar position="static"  sx={{backgroundColor:"orangered"}}>
+      <Toolbar>
+      <IconButton sx={{ padding: 0, fontSize: { xs: 'inherit', md: 'inherit' }, display: { md: 'flex' } }}>
+        <ShoppingCartIcon/> 
+        </IconButton> 
+
+        {/* Center Title */}
+        <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
+          <Typography variant="h6" component="div" sx={{fontFamily:"fantasy", color:"white"}}>
+            Clickshop
+          </Typography>
+        </Box>
+
+        {/* Right Button */}
+
+        <Link href="/auth/login"><Button variant="outlined" sx={{backgroundColor:"darkblue", color:"white"}}>Login</Button></Link>
+      </Toolbar>
+    </AppBar>
+
+    <div style= {{background: "linear-gradient(to right, #87CEEB, #4682B4)"}}>
     <Container>
        <br /> <br />
       <Grid container spacing={2}>
@@ -117,6 +142,54 @@ export default function index() {
       </Grid>
        <br /> <br />
     </Container>
+    </div>
+    <footer>
+            
+            <Box sx={{ bgcolor: 'slategrey', color:"whitesmoke", p: 6}} component="footer">
+            <Container maxWidth="lg">
+                <Grid container spacing={4} justifyContent="space-between">
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Site Links
+                        </Typography>
+          
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Quick Links
+                        </Typography>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Contact Us
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Privacy Policy
+                        </Link>
+                        <Link href="#" variant="subtitle1" color="textSecondary" style={{textDecoration:"none",display:"block", color:"whitesmoke"}}>
+                            Terms and Conditions
+                        </Link>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={3}>
+                        <Typography variant="h6" color="white" gutterBottom>
+                            Follow Us
+                        </Typography>
+                        <IconButton href="#" color="inherit">
+                            <Facebook />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <Twitter />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <Instagram />
+                        </IconButton>
+                        <IconButton href="#" color="inherit">
+                            <LinkedIn />
+                        </IconButton>
+                    </Grid>
+                </Grid>
+               
+            </Container>
+        </Box>
+        </footer>
     </>
   )
 }

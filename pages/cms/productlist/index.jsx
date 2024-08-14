@@ -12,7 +12,7 @@ import { product } from '@/api/axios/axios';
 import Link from 'next/link';
 import SweetAlertComponent from "../../../Sweetalert/Sweetalert";
 import { Box, Container, Typography } from '@mui/material';
-
+import  styles from './productlist.module.css';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -64,28 +64,28 @@ sed do eiusmod.
 <Box sx={{height:"50px"}}>
 
 </Box>
-      <TableContainer component={Paper} className="MuiTableContainer-root">
-      <Table sx={{ minWidth: 700, overflow:"hidden"}} aria-label="customized table" className="MuiTable-root">
+      <TableContainer component={Paper} className={styles.MuiTableContainer_root}>
+      <Table sx={{ minWidth: 700, overflow:"hidden"}} aria-label="customized table" className={styles.MuiTable_root}>
         <TableHead>
           <TableRow>
             <StyledTableCell>Image</StyledTableCell>
-            <StyledTableCell className="MuiTableCell-root" align="right">Title </StyledTableCell>
-            <StyledTableCell className="MuiTableCell-root"  align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>Description</StyledTableCell>
-            <StyledTableCell className="MuiTableCell-root" align="right">Delete Item</StyledTableCell>
-            <StyledTableCell className="MuiTableCell-root" align="right">Edit data</StyledTableCell>
+            <StyledTableCell className={styles.MuiTableCell_root} align="right">Title </StyledTableCell>
+            <StyledTableCell className={styles.MuiTableCell_root}  align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>Description</StyledTableCell>
+            <StyledTableCell className={styles.MuiTableCell_root} align="right">Delete</StyledTableCell>
+            <StyledTableCell className={styles.MuiTableCell_root} align="right">Edit</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data?.map((row) => (
-            <StyledTableRow className="MuiTableCell-root" key={row._id}>
-              <StyledTableCell  className="MuiTableCell-root" component="th" scope="row">
+            <StyledTableRow className={styles.MuiTableCell_root} key={row._id}>
+              <StyledTableCell  className={styles.MuiTableCell_root} component="th" scope="row">
                 <img style={{width:"80px", height:"80px"}} src={product(row.image)}/>
               </StyledTableCell>
-              <StyledTableCell className="MuiTableCell-root" align="right">{row.title}</StyledTableCell>
-              <StyledTableCell className="MuiTableCell-root" align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>{row.description} </StyledTableCell>
-              <StyledTableCell className="MuiTableCell-root" align="right"><button onClick={() => { setId (row._id);setSweetalert(true)}}
+              <StyledTableCell className={styles.MuiTableCell_root} align="right">{row.title}</StyledTableCell>
+              <StyledTableCell className={styles.MuiTableCell_root} align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>{row.description} </StyledTableCell>
+              <StyledTableCell className={styles.MuiTableCell_root} align="right"><button className={styles.MuiButton_root} onClick={() => { setId (row._id);setSweetalert(true)}}
                 >Remove</button></StyledTableCell>
-              <StyledTableCell align="right"><button><Link style={{textDecoration:"none", color:"black"}} href={`/cms/productlist/${row._id}`}>Update</Link></button></StyledTableCell>
+              <StyledTableCell align="right"><button className={styles.MuiButton_root}><Link style={{textDecoration:"none", color:"black"}} href={`/cms/productlist/${row._id}`}>Update</Link></button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
