@@ -21,7 +21,10 @@ const image = [img1, img2, img3];
 export default function Home() {
     return (
         <>
-        <div>
+        <div sx={{ display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+}}>
              <Carousel indicators={false} fade={true} interval={2000}>
       <Carousel.Item>
       <img
@@ -65,7 +68,7 @@ export default function Home() {
         <Container maxWidth="lg">
 
 <Typography sx={{display:"flex",alignItems:"center", justifyContent:"center", variant:"h2", fontSize:"40px", marginTop:"100px", color:"Red", fontFamily:"cursive"}}>
-  Our Products
+  Product Categories
 </Typography>
 <Typography sx={{display:"flex",alignItems:"center", justifyContent:"center", variant:"p", fontSize:"20px", marginTop:"20px", color:"GrayText"}}>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do <br /> eiusmod.
@@ -77,7 +80,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do <br /> eiusmod.
 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 3, sm: 6, md: 12 }}>
 {Array.from(Array(3)).map((_, index) => (
   <Grid item xs={12} sm={12} md={4} key={index}>
-     <Card variant='outlined' sx={{ display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column", height:500}}>
+     <Card variant='outlined' sx={{ display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column", height:500,
+      '&:hover':{
+        backgroundColor:"slategrey"
+      }
+     }}>
       <Image
      component="img"
        style width={300} height= {230}
@@ -95,7 +102,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do <br /> eiusmod.
     <Link style={{color:"Red", textDecoration:"none"}} href="/cms/productlist">
     <Button sx={{
 borderColor:"red",
-color:"red"}}
+color:"red",
+'&:hover': {
+  backgroundColor: "darkred",  // Darker red on hover for the background
+  borderColor: "darkred",      // Darker red on hover for the border
+  color: "white",        
+}
+    }}
  variant="outlined">Explore</Button>
  </Link>
 

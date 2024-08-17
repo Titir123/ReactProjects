@@ -4,12 +4,13 @@
 }
 
 .carousel_image {
-  height: 400px; 
+  height: 500px; 
   object-fit: cover; 
   width:100%;
 }
 .heading{
   color: rgb(2, 44, 60);
+ 
 }
 .para{
   color:rgb(1, 45, 62)

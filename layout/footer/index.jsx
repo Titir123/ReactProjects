@@ -8,6 +8,18 @@ const Footer = () => {
         <footer>
             
             <Box sx={{ bgcolor: 'slategrey', color:"whitesmoke", p: 6}} component="footer">
+            <Box sx={{ display:"flex", alignItems:"center", flexDirection:"column",
+            justifyContent:"center"}}>
+              <img style={{display:{md:'flex'}, width:"30px", height:"30px", 
+          }}
+       src="/Images/7191783.png"
+       ></img>
+      
+          <Typography variant="h6" component="div" sx={{fontFamily:"fantasy", color:"white"}}>
+            Clickshop
+          </Typography>
+          </Box>
+        <br/>
             <Container maxWidth="lg">
                 <Grid container spacing={4} justifyContent="space-between">
                     <Grid item xs={12} sm={6} md={3}>

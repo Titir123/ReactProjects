@@ -73,7 +73,7 @@ export default function Header() {
     <Toolbar sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
       
       {/* Mobile Menu Icon (Left for smaller screens) */}
-      <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-start' }}>
+      <Box sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-start',  }}>
         <IconButton
           size="large"
           aria-label="menu"
@@ -101,12 +101,15 @@ export default function Header() {
           onClose={handleCloseNavMenu}
           sx={{
             display: { xs: 'block', md: 'none' },
+         
+         
           }}
         >
           {pages.map((page) => (
             <MenuItem key={page} onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
-                <Link href={`/cms/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link href={`/cms/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'inherit'  
+         }}>
                   {page}
                 </Link>
               </Typography>
@@ -141,7 +144,13 @@ export default function Header() {
           <Button
             key={page}
             onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: 'white', display: 'block' }}
+            sx={{ my: 2, color: 'white', display: 'block' ,
+              '&:hover': {
+                backgroundColor: 'slategrey',
+                color:'blue',
+              },
+          
+            }}
           >
             <Link href={`/cms/${page.toLowerCase()}`} style={{ textDecoration: 'none', color: 'white' }}>
               {page}
