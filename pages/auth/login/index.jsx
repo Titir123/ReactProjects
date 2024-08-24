@@ -24,7 +24,7 @@ export default function index() {
        src="/Images/7191783.png"
        ></img>
 
-        <Box sx={{ flexGrow: 1, textAlign: 'center' }}>
+        <Box sx={{ flexGrow: 1, textAlign: 'left', marginLeft:1 }}>
           <Typography variant="h6" component="div" sx={{fontFamily:"fantasy", color:"white"}}>
             Clickshop
           </Typography>

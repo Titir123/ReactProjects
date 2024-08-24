@@ -21,6 +21,7 @@ export default function index() {
     };
     return (
         <>
+           <div style= {{backgroundImage: "linear-gradient(to right, yellow, orange)"}}>
             <Container>
                 <br /> <br />
                 <Grid container spacing={2}>
@@ -87,8 +88,10 @@ export default function index() {
                         </Paper>
                     </Grid>
                 </Grid>
+                <br /> <br />
             </Container>
-            <br /> <br />
+            </div>
+        
         </>
     )
 }

@@ -83,9 +83,9 @@ sed do eiusmod.
               </StyledTableCell>
               <StyledTableCell className={styles.MuiTableCell_root} align="right">{row.title}</StyledTableCell>
               <StyledTableCell className={styles.MuiTableCell_root} align="right" sx={{ display: { xs: 'none', sm: 'table-cell' } }}>{row.description} </StyledTableCell>
-              <StyledTableCell className={styles.MuiTableCell_root} align="right"><button className={styles.MuiButton_root} onClick={() => { setId (row._id);setSweetalert(true)}}
+              <StyledTableCell className={styles.MuiTableCell_root} align="right"><button className={styles.MuiButton_root} style={{backgroundColor:"red", color:"white"}} onClick={() => { setId (row._id);setSweetalert(true)}}
                 >Remove</button></StyledTableCell>
-              <StyledTableCell align="right"><button className={styles.MuiButton_root}><Link style={{textDecoration:"none", color:"black"}} href={`/cms/productlist/${row._id}`}>Update</Link></button></StyledTableCell>
+              <StyledTableCell align="right"><button className={styles.MuiButton_root} style={{backgroundColor:"green"}}><Link style={{textDecoration:"none", color:"white"}} href={`/cms/productlist/${row._id}`}>Update</Link></button></StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

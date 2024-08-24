@@ -121,7 +121,10 @@ export default function Header() {
       {/* Icon and Clickshop (Left for larger screens) */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexGrow: 1 }}>
         <IconButton sx={{ padding: 0, fontSize: { xs: 'inherit', md: 'inherit' }, display: { xs: 'none', md: 'flex' } }}>
-        <ShoppingCartIcon/> 
+        <img style={{display:{md:'flex'}, width:"30px", height:"30px", 
+          }}
+       src="/Images/7191783.png"
+       ></img>
         </IconButton>
         <Typography
           variant="h5"
